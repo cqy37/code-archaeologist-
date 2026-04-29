@@ -1,0 +1,34 @@
+llm:
+  provider: anthropic
+  model: claude-sonnet-4-6
+  max_tokens: 4096
+  temperature: 0.2
+
+explorer:
+  max_files: 1000
+  include_patterns:
+    - "*.py"
+    - "*.js"
+    - "*.java"
+    - "*.sql"
+  exclude_patterns:
+    - "node_modules"
+    - ".git"
+    - "__pycache__"
+    - "*.pyc"
+    - "vendor"
+    - "dist"
+    - "build"
+
+reasoner:
+  max_context_lines: 500
+  chunk_size: 200
+
+refactor:
+  safety_level: high
+  generate_tests: true
+
+validator:
+  timeout_seconds: 60
+  run_tests: true
+  check_performance: false
